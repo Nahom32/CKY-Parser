@@ -1,0 +1,48 @@
+
+S  → NP VP              [0.9]
+S  → S CONJ S           [0.1]
+
+NP → Det N              [0.25]
+NP → Det Adj N          [0.15]
+NP → NP PP              [0.20]
+NP → N                  [0.10]
+NP → NP CONJ NP         [0.10]
+
+VP → V NP               [0.30]
+VP → V PP               [0.20]
+VP → VP PP              [0.20]
+VP → Adv VP             [0.10]
+VP → V                  [0.05]
+
+PP → P NP               [1.0]
+
+Det → "the"             [0.6]
+Det → "a"               [0.4]
+
+N → "cat"               [0.15]
+N → "dog"               [0.15]
+N → "park"              [0.10]
+N → "telescope"         [0.10]
+N → "man"               [0.10]
+N → "woman"             [0.10]
+N → "city"              [0.10]
+N → "car"               [0.10]
+
+V → "saw"               [0.25]
+V → "walked"            [0.25]
+V → "chased"            [0.25]
+V → "liked"             [0.25]
+
+P → "in"                [0.4]
+P → "with"              [0.3]
+P → "on"                [0.3]
+
+Adj → "big"             [0.4]
+Adj → "small"           [0.3]
+Adj → "red"             [0.3]
+
+Adv → "quickly"         [0.5]
+Adv → "slowly"          [0.5]
+
+CONJ → "and"            [0.6]
+CONJ → "or"             [0.4]
