@@ -97,7 +97,6 @@ def load_pcfg_from_file(path: str) -> PCFG:
             rhs = [normalize_symbol(s) for s in rhs_raw]
             prob = float(m.group("prob"))
 
-            # 🔥 CNF BINARIZATION HERE 🔥
             cnf_rules = binarize_rule(lhs, rhs, prob)
             for A, B, p in cnf_rules:
                 grammar.add_rule(A, B, p)
@@ -105,9 +104,10 @@ def load_pcfg_from_file(path: str) -> PCFG:
     return grammar
 
 
-pcfg = load_pcfg_from_file("rules.txt")
-parser = CKYParser(pcfg)
-# t = to_nltk_tree(parser.parse("the man saw the dog with the telescope"))
-# t.draw()
-pretty_print_tree(parser.parse("the man saw the dog with the telescope"))
-# print(load_pcfg_from_file("rules.txt"))
+if __name__ == "__main__":
+    pcfg = load_pcfg_from_file("rules.txt")
+    parser = CKYParser(pcfg)
+    # t = to_nltk_tree(parser.parse("the man saw the dog with the telescope"))
+    # t.draw()
+    pretty_print_tree(parser.parse("the man saw the dog with the telescope"))
+    # print(load_pcfg_from_file("rules.txt"))
